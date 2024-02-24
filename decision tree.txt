@@ -1,0 +1,213 @@
+a decision tree is. It is a supervised machine-learning algorithm. It can handle both classification and regression.
+
+Decision Trees are a non-parametric supervised learning method that can be used for classification and regression applications. 
+
+ The goal is to build a model that predicts the value of a target variable using basic decision rules derived from data attributes.
+
+The decision rules are typically written in the form of if-then-else expressions. The deeper the tree, the more complicated the rules and the more accurate the model.
+
+we need to know about few more concepts like entropy, information gain, and Gini index.
+
+*******************************************
+which column we will be using:
+Gini
+Entropy and Information Gain: Entropy is also a measure of randomness or impurity. It is helpful while splitting the nodes further and making the right decision.
+
+But with entropy, we will also be using Information gain. So, Information gain helps to understand how much information we get from each feature.
+
+low entropy or more purity
+
+As mentioned earlier the goal of machine learning is to decrease the uncertainty or impurity in the dataset.
+
+
+Decision trees are a popular machine learning algorithm that can be used for both regression and classification tasks. They are easy to understand, interpret, and implement, making them an ideal choice for beginners in the field of machine learning. In this comprehensive guide, we will cover all aspects of the decision tree algorithm, including the working principles, different types of decision trees, the process of building decision trees, and how to evaluate and optimize decision trees. By the end of this article, you will have a complete understanding of decision trees and how they can be used to solve real-world problems. Please check the decision tree full course tutorial for FREE given below.
+
+
+Decision Tree Full Course Tutorial
+This article was published as a part of the Data Science Blogathon!
+
+Table of contents
+What is a Decision Tree?
+Decision Tree Terminologies
+Entropy
+How do Decision Trees use Entropy?
+Information Gain
+When to Stop Splitting?
+Pruning
+Endnotes
+Frequently Asked Questions
+What is a Decision Tree?
+A decision tree is a predictive model that uses a flowchart-like structure to make decisions based on input data. It divides data into branches and assigns outcomes to leaf nodes. Decision trees are used for classification and regression tasks, providing easy-to-understand models.
+
+A decision tree is a hierarchical model used in decision support that depicts decisions and their potential outcomes, incorporating chance events, resource expenses, and utility. This algorithmic model utilizes conditional control statements and is non-parametric, supervised learning, useful for both classification and regression tasks. The tree structure is comprised of a root node, branches, internal nodes, and leaf nodes, forming a hierarchical, tree-like structure.
+
+It is a tool that has applications spanning several different areas. Decision trees can be used for classification as well as regression problems. The name itself suggests that it uses a flowchart like a tree structure to show the predictions that result from a series of feature-based splits. It starts with a root node and ends with a decision made by leaves.
+
+what is Decision tree 
+Decision Tree Terminologies
+Before learning more about decision trees let’s get familiar with some of the terminologies:
+
+Root Nodes – It is the node present at the beginning of a decision tree from this node the population starts dividing according to various features.
+Decision Nodes – the nodes we get after splitting the root nodes are called Decision Node
+Leaf Nodes – the nodes where further splitting is not possible are called leaf nodes or terminal nodes
+Sub-tree – just like a small portion of a graph is called sub-graph similarly a sub-section of this decision tree is called sub-tree.
+Pruning – is nothing but cutting down some nodes to stop overfitting.
+When this occurs, it is known as data fragmentation, and it can often lead to overfitting.
+branch Decision tree algorithm
+Example of Decision Tree
+Let’s understand decision trees with the help of an example:
+
+example data
+Decision trees are upside down which means the root is at the top and then this root is split into various several nodes. Decision trees are nothing but a bunch of if-else statements in layman terms. It checks if the condition is true and if it is then it goes to the next node attached to that decision.
+
+In the below diagram the tree will first ask what is the weather? Is it sunny, cloudy, or rainy? If yes then it will go to the next feature which is humidity and wind. It will again check if there is a strong wind or weak, if it’s a weak wind and it’s rainy then the person may go and play.
+
+Decision tree example
+Did you notice anything in the above flowchart? We see that if the weather is cloudy then we must go to play. Why didn’t it split more? Why did it stop there?
+
+To answer this question, we need to know about few more concepts like entropy, information gain, and Gini index. But in simple terms, I can say here that the output for the training dataset is always yes for cloudy weather, since there is no disorderliness here we don’t need to split the node further.
+
+The goal of machine learning is to decrease uncertainty or disorders from the dataset and for this, we use decision trees.
+
+Now you must be thinking how do I know what should be the root node? what should be the decision node? when should I stop splitting? To decide this, there is a metric called “Entropy” which is the amount of uncertainty in the dataset.
+
+Entropy
+Entropy is nothing but the uncertainty in our dataset or measure of disorder. Let me try to explain this with the help of an example.
+
+Suppose you have a group of friends who decides which movie they can watch together on Sunday. There are 2 choices for movies, one is “Lucy” and the second is “Titanic” and now everyone has to tell their choice. After everyone gives their answer we see that “Lucy” gets 4 votes and “Titanic” gets 5 votes. Which movie do we watch now? Isn’t it hard to choose 1 movie now because the votes for both the movies are somewhat equal.
+
+This is exactly what we call disorderness, there is an equal number of votes for both the movies, and we can’t really decide which movie we should watch. It would have been much easier if the votes for “Lucy” were 8 and for “Titanic” it was 2. Here we could easily say that the majority of votes are for “Lucy” hence everyone will be watching this movie.
+
+In a decision tree, the output is mostly “yes” or “no”
+**********************************************************
+
+Gini Impurity 
+
+Gini impurity is the probability of incorrectly classifying random data point in the dataset if it were labeled based on the class distribution of the dataset. 
+Similar to entropy, if set, S, is pure (belonging to one class) then, its impurity is zero.
+
+**********************************************************
+
+How do Decision Trees use Entropy?
+Now we know what entropy is and what is its formula, Next, we need to know that how exactly does it work in this algorithm.
+
+Entropy basically measures the impurity of a node. Impurity is the degree of randomness; it tells how random our data is. Apure sub-splitmeans that either you should be getting “yes”, or you should be getting “no”.
+
+Supposea featurehas 8 “yes” and 4 “no” initially, after the first split the left node gets 5 ‘yes’ and 2 ‘no’whereas right node gets 3 ‘yes’ and 2 ‘no’.
+
+We see here the split is not pure, why? Because we can still see some negative classes in both the nodes. In order to make a decision tree, we need to calculate the impurity of each split, and when the purity is 100%, we make it as a leaf node.
+
+
+Always remember that the higher the Entropy, the lower will be the purity and the higher will be the impurity.
+in Gini Impurity , if set, S, is pure (belonging to one class) then, its impurity is zero.
+
+As mentioned earlier the goal of machine learning is to decrease the uncertainty or impurity in the dataset, here by using the entropy we are getting the impurity of a particular node, we don’t know if the parent entropy or the entropy of a particular node has decreased or not.
+
+Entropy values can fall between 0 and 1. 
+If all samples in data set, S, belong to one class, then entropy will equal zero. 
+If half of the samples are classified as one class and the other half are in another class, entropy will be at its highest at 1. 
+In order to select the best feature to split on and find the optimal decision tree, the attribute with the smallest amount of entropy should be used. 
+
+
+For this, we bring a new metric called “Information gain” which tells us how much the parent entropy has decreased after splitting it with some feature.
+
+Information Gain
+Information gain measures the reduction of uncertainty given some feature and it is also a deciding factor for which attribute should be selected as a decision node or root node.
+
+Hence we will select the feature which has the highest information gain and then split the node based on that feature.
+
+*******************************************
+
+Before calculating the entropy for input attributes, we need to calculate the entropy for the target or output variable.
+
+********************************************
+
+another name of decision tree. decision tree is a :
+1- hierarchical model
+2- predictive model
+3- algorithmic model
+
+********************************************
+
+When to Stop Splitting?
+
+Usually, real-world datasets have a large number of features, which will result in a large number of splits, which in turn gives a huge tree. Such trees take time to build and can lead to overfitting. 
+
+That means the tree will give very good accuracy on the training dataset but will give bad accuracy in test data.
+
+We can set the maximum depth of our decision tree using themax_depth parameter. The more the value of max_depth, the more complex your tree will be. The training error will off-course decrease if we increase the max_depth value but when our test data comes into the picture, we will get a very bad accuracy.
+
+Hence you need a value that will not overfit as well as underfit our data and for this, you can use GridSearchCV.
+
+Pruning
+Pruning is another method that can help us avoid overfitting.
+It helps in improving the performance of the tree by cutting the nodes or sub-nodes which are not significant. 
+Additionally, it removes the branches which have very low importance.
+
+There are mainly 2 ways for pruning:
+
+Pre-pruning – we can stop growing the tree earlier, which means we can prune/remove/cut a node if it has low importance while growing the tree.
+Post-pruning – once our tree is built to its depth, we can start pruning the nodes based on their significance.
+
+To reduce complexity and prevent overfitting, pruning is usually employed; 
+this is a process, which removes branches that split on features with low importance. 
+The model’s fit can then be evaluated through the process of cross-validation. 
+Another way that decision trees can maintain their accuracy is by forming an ensemble via a random forest algorithm; 
+this classifier predicts more accurate results, particularly when the individual trees are uncorrelated with each other.
+
+********************************************
+
+What are the 4 types of decision tree?
+A. The four types of decision trees are Classification tree, Regression tree, Cost-complexity pruning tree, and Reduced Error Pruning tree.
+
+ Which algorithm is best for decision tree?
+A. The best algorithm for decision trees depends on the specific problem and dataset. Popular decision tree algorithms include ID3, C4.5, CART, and Random Forest. Random Forest is considered one of the best algorithms as it combines multiple decision trees to improve accuracy and reduce overfitting.
+
+********************************************
+
+Linear regression does not work in the case of classification problems because it is a regression algorithm that is designed to predict continuous values, not categorical values. 
+
+Classification problems require algorithms that can predict categorical values, such as decision trees, logistic regression, or support vector machines. 
+
+Decision trees are particularly well-suited for classification problems because they can handle both categorical and continuous variables, and they can capture non-linear relationships between variables
+
+*********************************************
+
+Always remember that the higher the Entropy, the lower will be the purity and the higher will be the impurity.
+in Gini Impurity , if set, S, is pure (belonging to one class) then, its impurity is zero.
+
+*********************************************
+
+The best options for variance and biases for a decision tree :
+
+The best options for variance and biases for a decision tree depend on finding the right balance between the two. 
+Decision trees have low bias and high variance, which means they are susceptible to overfitting and can be sensitive to small changes in the data.
+
+Here are some considerations for optimizing the variance and bias of a decision tree:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
